@@ -1,7 +1,7 @@
 /* Navbar container */
 
 @media (max-width: 1024px) {
-  .navbar {
+  .navbsar {
     position: fixed; /* or absolute, relative as needed */
     top: 0;
     left: 0;
@@ -9,7 +9,7 @@
     z-index: 1000; /* Ensure this is higher than the ul's z-index */
     background-color: white;
   }
-  .navbar ul {
+  .navsbar ul {
     position: absolute; /* or fixed if you want it to stick to the viewport */
     top: 100%; /* Position below the Navbar */
     left: 0%;
@@ -17,6 +17,10 @@
     transition: left 0.5s ease-in-out;
     background-color: #f1f1f1; /* Ensure this matches your design */
   }
+}
+
+.navbar{
+  z-index: 9999;
 }
 
 /* Dropdown menu */

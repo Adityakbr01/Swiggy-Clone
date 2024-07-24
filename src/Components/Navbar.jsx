@@ -3,14 +3,14 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import { RiDiscountPercentLine } from "react-icons/ri";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import "../Components/Navbar.css";
 import Hamburger from "hamburger-react";
+import "../Components/Navbar.css"
 
 function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
   return (
-    <div className="w-full navbar z-50 h-20 bg-[#fff] flex items-center justify-between relative  left-0 top-0 xl:px-[10rem] px-[2rem] lg:px-[6rem]  shadow-md">
+    <div className="w-full navbar h-20 bg-[#fff] flex items-center justify-between fixed  left-0 top-0 xl:px-[10rem] px-[2rem] lg:px-[6rem]  shadow-md">
       <div className="left-Navbar flex items-center gap-6 md:gap-14">
         <div>
           <svg
@@ -51,7 +51,7 @@ function Navbar() {
       </div>
       <div className="right-Navbar">
         <ul
-          className={`lg:flex lg:flex-row items-center flex-col bg-[#d1d1d1] lg:bg-transparent gap-3 lg:gap-6 hidden${
+          className={`lg:flex lg:flex-row items-center flex-col bg-[#d1d1d1] lg:bg-transparent gap-3 lg:gap-12 hidden${
             navOpen
               ? "items-center justify-center flex absolute top-0 left-0 px-10 h-[100vh] w-[84vw] z-40 "
               : ""
