@@ -3,3 +3,7 @@
   background: (rgba(27, 30, 36, 0) 0%, rgb(27, 30, 36) 84.21%);
   display: block;
 }
+
+.scl:hover {
+  scale: 0.95;
+}

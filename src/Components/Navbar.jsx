@@ -53,7 +53,7 @@ function Navbar() {
         <ul
           className={`lg:flex lg:flex-row items-center flex-col bg-[#d1d1d1] lg:bg-transparent gap-3 lg:gap-12 hidden${
             navOpen
-              ? "items-center justify-center flex absolute top-0 left-0 px-10 h-[100vh] w-[84vw] z-40 "
+              ? "items-center justify-center flex absolute top-[100%] left-0 px-10 h-[100vh] w-[84vw] z-40 "
               : ""
           }`}
         >
