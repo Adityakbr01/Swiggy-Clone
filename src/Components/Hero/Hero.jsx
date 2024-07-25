@@ -4,10 +4,12 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { FiFilter } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
 import "../Hero/Hero.css";
+import { add } from "../../Store/Reducer/CartSlice";
+import { useDispatch } from "react-redux";
+import CheckOut from "./CheckOut/CheckOut";
 
-function Hero({ Header_Data, TopResturent }) {
-  const { image, offer, title, rating, minTime, maxTime, name, place } =
-    TopResturent;
+function Hero({ Header_Data, TopResturent, TopResturent2 }) {
+  const dispatch = useDispatch();
   const [initHeader, setInitHeader] = useState(0);
   const [InitialTopRes, setInitialTopRes] = useState(0);
   const [isRightArrowDisabled01, setIsRightArrowDisabled01] = useState(false);
@@ -116,7 +118,7 @@ function Hero({ Header_Data, TopResturent }) {
             return (
               <div
                 style={{
-                  transform: `translateX(-${InitialTopRes * 70}%)`,
+                  transform: `translateX(-${InitialTopRes * 77}%)`,
                   transition: "all 0.3s ease-in-out",
                 }}
                 className="transition-all ease-in duration-200 scl cursor-pointer"
@@ -178,17 +180,25 @@ function Hero({ Header_Data, TopResturent }) {
                       {elem.minTime}-{elem.maxTime} mins
                     </span>
                   </div>
-                  <p className="text-xs opacity-80 mt-1 leading-none font-medium">
-                    Burger American <br />
-                    Ladipur
-                  </p>
+                  <div className="flex items-center justify-between px-1">
+                    <p className="text-xs opacity-80 mt-1 leading-none font-medium">
+                      Burger American <br />
+                      Ladipur
+                    </p>
+                    <button
+                      onClick={() => dispatch(add(elem))}
+                      className="px-4 py-1 bg-[#F67016] text-white border rounded-full"
+                    >
+                      Add
+                    </button>
+                  </div>
                 </div>
               </div>
             );
           })}
         </div>
         <div className="w-full h-[1.4px] mt-2 mb-6 bg-[#F2F2F3]"></div>
-        <div className="CatogryandCity my-">
+        <div className="">
           <h2 className="font-bold text-xl sm:text-2xl ">
             Restaurants with online food delivery in Patna
           </h2>
@@ -225,17 +235,14 @@ function Hero({ Header_Data, TopResturent }) {
               Less than Rs.300
             </button>
           </div>
-          <div className="top-resturant-container justify-center sm:justify-start mt-4 pb-10 flex flex-wrap items-center gap-2">
-            {TopResturent.map((elem) => {
+          <div className="top-resturant-container sm:justify-start mt-6 pb-10 flex flex-wrap items-center gap-2">
+            {TopResturent2.map((elem) => {
               return (
                 <div
-                  style={{
-                    transform: `translateX(-${InitialTopRes * 70}%)`,
-                    transition: "all 0.3s ease-in-out",
-                  }}
-                  className="hover:scale-110 shrink-0 scl transition-all ease-in duration-200 cursor-pointer"
+                
+                  className="hover:scale-105 shrink-0 scl transition-all ease-in duration-200 cursor-pointer"
                 >
-                  <div className="card h-[10rem] w-[13rem] bg-white flex items-center justify-center rounded-xl relative overflow-hidden">
+                  <div className="card h-[10rem] w-[13rem] sm:w-[11rem] md:w-[13rem] bg-white flex items-center justify-center rounded-xl relative overflow-hidden">
                     <img
                       className="card-img object-cover relative z-10"
                       src={elem.image}
@@ -300,6 +307,44 @@ function Hero({ Header_Data, TopResturent }) {
                 </div>
               );
             })}
+          </div>
+          <div className="flex flex-col gap-1 my-4">
+            <h2 className="font-extrabold text-3xl">Popular Dishes Near Me</h2>
+            <div className="flex gap-2 flex-wrap">
+              <button className="border px-3 p-2 rounded-full hover:border-[#F56C13] hover:text-[#F56C13] transition-all ease-in duration-100">
+                Panner Near Me
+              </button>
+              <button className="border px-3 p-2 rounded-full hover:border-[#F56C13] hover:text-[#F56C13] transition-all ease-in duration-100">
+                Rasgulla Near Me
+              </button>
+              <button className="border px-3 p-2 rounded-full hover:border-[#F56C13] hover:text-[#F56C13] transition-all ease-in duration-100">
+                Brownia Near Me
+              </button>
+              <button className="border px-3 p-2 rounded-full hover:border-[#F56C13] hover:text-[#F56C13] transition-all ease-in duration-100">
+                Butter Naan Near Me
+              </button>
+              <button className="border px-3 p-2 rounded-full hover:border-[#F56C13] hover:text-[#F56C13] transition-all ease-in duration-100">
+                Dahi Vada Near Me
+              </button>
+              <button className="border px-3 p-2 rounded-full hover:border-[#F56C13] hover:text-[#F56C13] transition-all ease-in duration-100">
+                Mutton Curry Near Me
+              </button>
+              <button className="border px-3 p-2 rounded-full hover:border-[#F56C13] hover:text-[#F56C13] transition-all ease-in duration-100">
+                Veg Pizza Near Me
+              </button>
+              <button className="border px-3 p-2 rounded-full hover:border-[#F56C13] hover:text-[#F56C13] transition-all ease-in duration-100">
+                Fried Chiken Near Me
+              </button>
+              <button className="border px-3 p-2 rounded-full hover:border-[#F56C13] hover:text-[#F56C13] transition-all ease-in duration-100">
+                Freanch Fried Near Me
+              </button>
+              <button className="border px-3 p-2 rounded-full hover:border-[#F56C13] hover:text-[#F56C13] transition-all ease-in duration-100">
+                Mashroom Masala..
+              </button>
+              <button className="border px-3 p-2 rounded-full hover:border-[#F56C13] hover:text-[#F56C13] transition-all ease-in duration-100">
+                Idli Masala..
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -4,6 +4,15 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://www.swiggy.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
   optimizeDeps: {
     include: ["swiper/react", "swiper"],
   },

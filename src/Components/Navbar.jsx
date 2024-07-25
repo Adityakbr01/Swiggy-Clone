@@ -5,10 +5,21 @@ import { RiDiscountPercentLine } from "react-icons/ri";
 import { RiShoppingCartLine } from "react-icons/ri";
 import "../Components/Navbar.css";
 import Hamburger from "hamburger-react";
-import "../Components/Navbar.css"
+import "../Components/Navbar.css";
+import { useDispatch, useSelector } from "react-redux";
+import { remove } from "../Store/Reducer/CartSlice";
+import CheckOut from "./Hero/CheckOut/CheckOut";
+import { open } from "../Store/Reducer/CheckOutSlice";
 
 function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
+  const dispatch = useDispatch();
+  const { amount } = useSelector((state) => state.Cart);
+  const isOpenNav = useSelector((state) => state.CheckOut.isOpen);
+  const HandleShopClick = () => {
+    dispatch(open());
+    setNavOpen(false);
+  };
   return (
     <div className="w-full navbar h-20 bg-[#fff] flex items-center justify-between fixed  left-0 top-0 xl:px-[10rem] px-[2rem] lg:px-[6rem]  shadow-md">
       <div className="left-Navbar flex items-center gap-6 md:gap-14">
@@ -110,9 +121,15 @@ function Navbar() {
             </div>
             <h2 className="text-3xl lg:text-lg ">Help</h2>
           </li>
-          <li className="flex items-center gap-2 cursor-pointer transition-all ease-in duration-100 hover:text-[#F56F15]">
+          <li
+            onClick={() => HandleShopClick()}
+            className="flex items-center relative gap-2 cursor-pointer transition-all ease-in duration-100 hover:text-[#F56F15]"
+          >
             <RiShoppingCartLine size={22} />
-            <h2 className="text-3xl lg:text-lg ">Cart</h2>
+
+            <div className="w-[0.9rem] h-[0.9rem] bg-[#FA8125] text-center text-[0.6rem] font-medium text-black absolute top-[9px] left-3 rounded-full flex items-center justify-center">
+              {amount}
+            </div>
           </li>
         </ul>
         <div class="lg:hidden">
@@ -124,6 +141,7 @@ function Navbar() {
           />
         </div>
       </div>
+      <CheckOut />
     </div>
   );
 }
