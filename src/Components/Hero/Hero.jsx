@@ -16,6 +16,11 @@ function Hero({ Header_Data, TopResturent, TopResturent2 }) {
   const [isLeftArrowDisable01, setIsLeftArrowDisabled01] = useState(true);
   const [isRightArrowDisabled, setIsRightArrowDisabled] = useState(false);
   const [isLeftArrowDisabled, setIsLeftArrowDisabled] = useState(true);
+  const [filteredTopResturent2, setFilteredTopResturent2] = useState([]);
+  const [isDelivery, setIsDelivery] = useState(false);
+  const [isOffer, setIsOffer] = useState(false);
+  const [category, setCategory] = useState("All"); // Change 'All' to default category or 'All' to show all categories
+  const [minRating, setMinRating] = useState(2); // Minimum rating to filter
   const swiper_pre = () => {
     if (initHeader <= 0) return setIsLeftArrowDisabled01(true);
     setInitHeader(initHeader - 3);
@@ -45,7 +50,27 @@ function Hero({ Header_Data, TopResturent, TopResturent2 }) {
       setIsLeftArrowDisabled(false);
     }
   };
+  useEffect(() => {
+    let results = TopResturent2;
 
+    if (isDelivery) {
+      results = results.filter((item) => item.isDelivery);
+    }
+
+    if (isOffer) {
+      results = results.filter((item) => item.isOffer);
+    }
+
+    if (category !== "All") {
+      results = results.filter((item) => item.category === category);
+    }
+
+    if (minRating) {
+      results = results.filter((item) => item.rating > minRating);
+    }
+
+    setFilteredTopResturent2(results);
+  }, [isDelivery, category, minRating, isOffer, TopResturent2]);
   return (
     <div className="max-w-[1100px] w-[90vw] flex flex-col gap-2 mx-auto h-full mt-[7rem]">
       <div className="flex items-center justify-between h-12 w-full">
@@ -208,26 +233,43 @@ function Hero({ Header_Data, TopResturent, TopResturent2 }) {
               <FiFilter className="font-medium" />
             </div>
             <div className="flex items-center gap-1 border rounded-full px-2 py-1 cursor-pointer hover:border-sky-500 transition-all ease-in duration-100 hover:text-sky-500">
-              <button className="font-medium">Short By </button>
+              <button
+                onClick={() => setCategory("All")}
+                className="font-medium"
+              >
+                All{" "}
+              </button>
               <IoIosArrowDown className="font-medium" />
             </div>
 
-            <button className="border rounded-full px-2 py-1 cursor-pointer font-medium hover:border-sky-500 transition-all ease-in duration-100 hover:text-sky-500">
+            <button
+              onClick={() => setIsDelivery(true)}
+              className={`border rounded-full px-2 py-1 cursor-pointer font-medium ${
+                isDelivery && "border-sky-500 text-sky-500"
+              } hover:border-sky-500 transition-all ease-in duration-100 hover:text-sky-500`}
+            >
               Fast Delivery
             </button>
             <button className="border hover:border-sky-500 transition-all ease-in duration-100 hover:text-sky-500 rounded-full px-2 py-1 cursor-pointer font-medium">
               New On Swiggy
             </button>
-            <button className="border rounded-full px-2 py-1 cursor-pointer font-medium hover:border-sky-500 transition-all ease-in duration-100 hover:text-sky-500">
+            <button
+              onClick={() => setMinRating(4)}
+              className={`border rounded-full px-2 py-1 cursor-pointer font-medium ${minRating === 4 && "border-sky-500 text-sky-500"} hover:border-sky-500 transition-all ease-in duration-100 hover:text-sky-500`}
+            >
               Rating 4.0+
             </button>
             <button className="border rounded-full px-2 py-1 cursor-pointer font-medium hover:border-sky-500 transition-all ease-in duration-100 hover:text-sky-500">
               Pure veg
             </button>
-            <button className="border rounded-full px-2 py-1 cursor-pointer font-medium hover:border-sky-500 transition-all ease-in duration-100 hover:text-sky-500">
+            <button
+              onClick={() => setIsOffer(true)}
+              className={`border rounded-full px-2 py-1 cursor-pointer font-medium ${
+                isOffer && "border-sky-500 text-sky-500"
+              } hover:border-sky-500 transition-all ease-in duration-100 hover:text-sky-500`}
+            >
               Offer
             </button>
-
             <button className="border rounded-full px-2 py-1 cursor-pointer font-medium hover:border-sky-500 transition-all ease-in duration-100 hover:text-sky-500">
               Rs.300-Rs.600
             </button>
@@ -235,13 +277,10 @@ function Hero({ Header_Data, TopResturent, TopResturent2 }) {
               Less than Rs.300
             </button>
           </div>
-          <div className="top-resturant-container sm:justify-start mt-6 pb-10 flex flex-wrap items-center gap-2">
-            {TopResturent2.map((elem) => {
+          <div className="top-resturant-container TopResturent2 sm:justify-start mt-6 pb-10 flex flex-wrap items-center gap-2">
+            {filteredTopResturent2.map((elem) => {
               return (
-                <div
-                
-                  className="hover:scale-105 shrink-0 scl transition-all ease-in duration-200 cursor-pointer"
-                >
+                <div className="hover:scale-105 shrink-0 scl transition-all ease-in duration-200 cursor-pointer">
                   <div className="card h-[10rem] w-[13rem] sm:w-[11rem] md:w-[13rem] bg-white flex items-center justify-center rounded-xl relative overflow-hidden">
                     <img
                       className="card-img object-cover relative z-10"
@@ -300,8 +339,7 @@ function Hero({ Header_Data, TopResturent, TopResturent2 }) {
                       </span>
                     </div>
                     <p className="text-xs opacity-80 mt-1 leading-none font-medium">
-                      Burger American <br />
-                      Ladipur
+                     {elem.place}
                     </p>
                   </div>
                 </div>
@@ -353,3 +391,5 @@ function Hero({ Header_Data, TopResturent, TopResturent2 }) {
 }
 
 export default Hero;
+
+// isDelivery

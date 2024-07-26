@@ -40,27 +40,27 @@ export const Items = [
     name: "South Indian",
   },
   {
-    id: 4,
+    id: 9,
     img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/22/d94f8a12-6cb9-4b49-ab4d-7e4f452a0f09_PCTile.png",
     name: "North India",
   },
   {
-    id: 5,
+    id: 10,
     img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/8f508de7-e0ac-4ba8-b54d-def9db98959e_burger.png",
     name: "Burger",
   },
   {
-    id: 6,
+    id: 11,
     img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/17/58760e8e-324f-479e-88fa-31800120ea38_Rolls1.png",
     name: "Rolls",
   },
   {
-    id: 7,
+    id: 12,
     img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_Chinese.png",
     name: "Chines",
   },
   {
-    id: 8,
+    id: 13,
     img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/8f508de7-e0ac-4ba8-b54d-def9db98959e_Salad-1.png",
     name: "South Indian",
   },
@@ -166,7 +166,7 @@ export const TopResturent = [
   {
     id: 9,
     image:
-    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/mq1vlwbzjanzdeukja3d",
+      "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/mq1vlwbzjanzdeukja3d",
     offer: "₹70 OFF ABOVE ₹249",
     title: "McDonald's",
     rating: 4.4,
@@ -189,7 +189,8 @@ export const TopResturent = [
   },
   {
     id: 11,
-    image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/21/d2d5b0e8-2087-49c5-a9ed-a4c49adb837c_196365%20ss.jpg",
+    image:
+      "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/21/d2d5b0e8-2087-49c5-a9ed-a4c49adb837c_196365%20ss.jpg",
     offer: "₹90 OFF ABOVE ₹299",
     title: "Pizza Hut",
     rating: 4.2,
@@ -200,7 +201,8 @@ export const TopResturent = [
   },
   {
     id: 12,
-    image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/csxizbaa7bt9ybnolmq4",
+    image:
+      "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/csxizbaa7bt9ybnolmq4",
     offer: "₹50 OFF ABOVE ₹199",
     title: "Janta Sweet Home",
     rating: 4.5,
@@ -211,7 +213,8 @@ export const TopResturent = [
   },
   {
     id: 13,
-    image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/csxizbaa7bt9ybnolmq4",
+    image:
+      "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/csxizbaa7bt9ybnolmq4",
     offer: "₹90 OFF ABOVE ₹299",
     title: "Pizza Hut",
     rating: 4.2,
@@ -222,7 +225,8 @@ export const TopResturent = [
   },
   {
     id: 14,
-    image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/21/d2d5b0e8-2087-49c5-a9ed-a4c49adb837c_196365%20ss.jpg",
+    image:
+      "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/21/d2d5b0e8-2087-49c5-a9ed-a4c49adb837c_196365%20ss.jpg",
     offer: "₹50 OFF ABOVE ₹199",
     title: "Janta Sweet Home",
     rating: 4.5,
@@ -238,11 +242,13 @@ export const TopResturent2 = [
     image: "/public/images2/image1 (1).jpg",
     offer: "₹90 OFF ABOVE ₹299",
     title: "Pizza Hut",
-    rating: 4.2,
+    rating: 3.2,
     minTime: 30,
     maxTime: 40,
     name: "Pizzas",
     place: "New Jodhpur",
+    isDelivery: true,
+    category: "All",
   },
   {
     image: "public/images2/image1.jpg",
@@ -253,6 +259,7 @@ export const TopResturent2 = [
     maxTime: 40,
     name: "Sweets, South Indian",
     place: "Shastri Nagar",
+    category: "All",
   },
   {
     image: "/public/images2/image1 (1).jpg",
@@ -263,6 +270,7 @@ export const TopResturent2 = [
     maxTime: 40,
     name: "Pizzas",
     place: "New Jodhpur",
+    category: "All",
   },
   {
     image: "public/images2/image1.jpg",
@@ -273,16 +281,20 @@ export const TopResturent2 = [
     maxTime: 40,
     name: "Sweets, South Indian",
     place: "Shastri Nagar",
+    isDelivery: true,
+    category: "All",
   },
   {
     image: "public/images2/image2.png",
     offer: "₹85 OFF ABOVE ₹149",
     title: "Parihaar Bhojnalay",
-    rating: 4.3,
+    rating: 3.3,
     minTime: 35,
     maxTime: 40,
     name: "North India, Thalis",
     place: "Sardarpura",
+    isDelivery: true,
+    category: "All",
   },
   {
     image: "public/images2/image3.png",
@@ -293,6 +305,8 @@ export const TopResturent2 = [
     maxTime: 25,
     name: "Desserts, Ice Cream",
     place: "Chopsani Housing Board",
+    isDelivery: true,
+    category: "All",
   },
   {
     image: "public/images2/image4.png",
@@ -303,16 +317,18 @@ export const TopResturent2 = [
     maxTime: 35,
     name: "Biryani, North India",
     place: "Shastri Nagar",
+    category: "All",
   },
   {
     image: "public/images2/image5.png",
     offer: "₹100 OFF ABOVE ₹499",
     title: "NIC Ice Creams",
-    rating: 4.7,
+    rating: 2.7,
     minTime: 25,
     maxTime: 30,
     name: "Desserts, Ice Cream",
     place: "Sardarpura",
+    category: "All",
   },
   {
     image: "public/images2/image5.jpg",
@@ -323,16 +339,20 @@ export const TopResturent2 = [
     maxTime: 40,
     name: "South Indian",
     place: "Chopsani Housing Board",
+    isDelivery: true,
+    category: "All",
+    isOffer: true,
   },
   {
     image: "public/images2/image6.png",
     offer: "₹125 OFF ABOVE ₹349",
     title: "Lunch Box - Meals and Thalis",
-    rating: 4.3,
+    rating: 2.3,
     minTime: 30,
     maxTime: 35,
     name: "Biryani, North India",
     place: "Shastri Nagar",
+    category: "All",
   },
   {
     image: "public/images2/image7.jpg",
@@ -343,6 +363,7 @@ export const TopResturent2 = [
     maxTime: 45,
     name: "Biryani",
     place: "Sardar Patel Nagar",
+    category: "All",
   },
   {
     image: "public/images2/image72.jpg",
@@ -353,16 +374,19 @@ export const TopResturent2 = [
     maxTime: 30,
     name: "Burgers",
     place: "Khatipura",
+    category: "All",
+    isOffer: true,
   },
   {
     image: "public/images2/image9.png",
     offer: "₹70 OFF ABOVE ₹249",
     title: "Haldiram's",
-    rating: 4.2,
+    rating: 3.4,
     minTime: 30,
     maxTime: 40,
     name: "Snacks",
     place: "Ashok Nagar",
+    category: "All",
   },
   {
     image: "public/images2/image10.png",
@@ -373,16 +397,18 @@ export const TopResturent2 = [
     maxTime: 25,
     name: "Coffee, Snacks",
     place: "JLN Marg",
+    category: "All",
   },
   {
     image: "public/images2/image39.jpg",
     offer: "₹80 OFF ABOVE ₹399",
     title: "Tandoori Express",
-    rating: 4.5,
+    rating: 4.0,
     minTime: 30,
     maxTime: 35,
     name: "Tandoori",
     place: "Bapu Nagar",
+    category: "All",
   },
   {
     image: "public/images2/image100.jpg",
@@ -390,16 +416,18 @@ export const TopResturent2 = [
     maxTime: 25,
     name: "Desserts, Ice Cream",
     place: "Chopsani Housing Board",
+    category: "All",
   },
   {
     image: "public/images2/image4.png",
     offer: "₹1-5 OFF ABOVE ₹179",
     title: "The Good Bowl",
-    rating: 4.4,
+    rating: 2.4,
     minTime: 30,
     maxTime: 35,
     name: "Biryani, North India",
     place: "Shastri Nagar",
+    category: "All",
   },
   {
     image: "public/images2/image5.png",
@@ -410,6 +438,8 @@ export const TopResturent2 = [
     maxTime: 30,
     name: "Desserts, Ice Cream",
     place: "Sardarpura",
+    category: "All",
+    isOffer: true,
   },
   {
     image: "public/images2/image5.jpg",
@@ -420,16 +450,18 @@ export const TopResturent2 = [
     maxTime: 40,
     name: "South Indian",
     place: "Chopsani Housing Board",
+    category: "All",
   },
   {
     image: "public/images2/image6.png",
     offer: "₹125 OFF ABOVE ₹349",
     title: "Lunch Box - Meals and Thalis",
-    rating: 4.3,
+    rating: 2.7,
     minTime: 30,
     maxTime: 35,
     name: "Biryani, North India",
     place: "Shastri Nagar",
+    category: "All",
   },
   {
     image: "public/images2/image7.jpg",
@@ -440,17 +472,19 @@ export const TopResturent2 = [
     maxTime: 45,
     name: "Biryani",
     place: "Sardar Patel Nagar",
+    category: "All",
   },
 
   {
     image: "public/images2/image9.png",
     offer: "₹70 OFF ABOVE ₹249",
     title: "Haldiram's",
-    rating: 4.2,
+    rating: 4.9,
     minTime: 30,
     maxTime: 40,
     name: "Snacks",
     place: "Ashok Nagar",
+    category: "All",
   },
   {
     image: "public/images2/image10.png",
@@ -461,17 +495,20 @@ export const TopResturent2 = [
     maxTime: 25,
     name: "Coffee, Snacks",
     place: "JLN Marg",
+    category: "All",
+    isOffer: true,
   },
 
   {
     image: "public/images2/image12.jpg",
     offer: "₹120 OFF ABOVE ₹499",
     title: "Samosa Corner",
-    rating: 4.1,
+    rating: 2.6,
     minTime: 20,
     maxTime: 30,
     name: "Snacks",
     place: "Raja Park",
+    category: "All",
   },
 
   {
@@ -483,6 +520,7 @@ export const TopResturent2 = [
     maxTime: 25,
     name: "Chaat",
     place: "Bani Park",
+    category: "All",
   },
 
   {
@@ -494,6 +532,7 @@ export const TopResturent2 = [
     maxTime: 30,
     name: "Pasta",
     place: "Vidhyadhar Nagar",
+    category: "All",
   },
 
   {
@@ -505,5 +544,7 @@ export const TopResturent2 = [
     maxTime: 30,
     name: "Desserts",
     place: "Sadar Bazar",
+    category: "All",
+    isOffer: true,
   },
 ];
